@@ -31,17 +31,17 @@ class InstallationQualification:
         of the provided PyTorch model's state dictionary.
         """
         hasher = hashlib.sha256()
-        
+
         # Ensure deterministic iteration over state dict keys
         for key in sorted(model.state_dict().keys()):
             tensor = model.state_dict()[key].cpu()
             # Convert to numpy bytes to ensure stable cross-platform hashing
             hasher.update(key.encode("utf-8"))
             hasher.update(tensor.numpy().tobytes())
-            
+
         sha256 = hasher.hexdigest()
 
-        # Determinism is intrinsic to a frozen state dict. We verify the 
+        # Determinism is intrinsic to a frozen state dict. We verify the
         # hash hasn't drifted since the initial loading.
         deterministic = True
 
