@@ -6,19 +6,47 @@ build-backend = "poetry.core.masonry.api"
 name = "geocsv-ai"
 version = "1.0.0"
 description = "Geometric Computer Systems Validation and Manifold Safety Harness for AI"
-authors = ["Principal Investigator <researcher@geocsv.org>"]
+authors = ["Justin Arndt <justinarndtai@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
 packages = [{include = "geocsv", from = "src"}]
+homepage = "https://github.com/justinarndtpa/geocsv-ai"
+repository = "https://github.com/justinarndtpa/geocsv-ai"
 
 [tool.poetry.dependencies]
 python = "^3.11"
 torch = ">=2.2.0"
 scipy = ">=1.12.0"
 numpy = ">=1.26.0"
+tinygrad = {version = ">=0.9.0", optional = true}
+
+[tool.poetry.extras]
+tinygrad = ["tinygrad"]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
 pytest-cov = "^5.0.0"
 hypothesis = "^6.98.0"
-flake8 = "^7.0.0"
+ruff = "^0.4.0"
+mypy = "^1.10.0"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true

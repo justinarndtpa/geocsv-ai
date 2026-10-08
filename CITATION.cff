@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you utilize this software or its mathematical theorems in academic or safety research, please cite it as below."
+authors:
+  - family-names: "Arndt"
+    given-names: "Justin"
+    orcid: "https://orcid.org/0009-0000-0000-0000"
+    affiliation: "GeoCSV Project / BlueDot AI Safety Technical Transition"
+title: "GeoCSV-AI: Geometric Computer Systems Validation and Manifold Safety Harness for Artificial Intelligence"
+version: 1.0.0
+doi: 10.5281/zenodo.0000000
+date-released: 2026-10-08
+url: "https://github.com/justinarndtpa/geocsv-ai"
+repository-code: "https://github.com/justinarndtpa/geocsv-ai"
+keywords:
+  - ai-safety
+  - mechanistic-interpretability
+  - stiefel-manifold
+  - symplectic-geometry
+  - formal-verification
+  - lean-4
+  - fda-21-cfr-part-11
+  - gamp-5
+  - tinygrad
+license: Apache-2.0

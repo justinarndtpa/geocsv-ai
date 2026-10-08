@@ -1,0 +1,44 @@
+name: Qualification & Audit Defect (CSV / GAMP 5)
+description: Report a failure in Installation Qualification (IQ), Operational Qualification (OQ), or 21 CFR Part 11 audit trails.
+title: "[DEFECT-CSV]: "
+labels: ["qualification", "audit-trail", "gamp5"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to document qualification discrepancies, cryptographic seal verification failures, or compliance deviations under GAMP 5 Category 4 / FDA 21 CFR Part 11 protocols.
+  - type: input
+    id: protocol_id
+    attributes:
+      label: Test Protocol ID / Standard
+      description: Specific validation protocol referenced.
+      placeholder: "e.g., IQ-STIEFEL-WOODBURY-001, OQ-CAUSAL-ABLATION-002"
+    validations:
+      required: true
+  - type: dropdown
+    id: qualification_phase
+    attributes:
+      label: Qualification Phase
+      options:
+        - "Installation Qualification (IQ) - Weights / Kernels / Determinism"
+        - "Operational Qualification (OQ) - Manifold Boundaries / Causal Ablation"
+        - "Performance Qualification (PQ) - Adversarial Drift / Stress Limits"
+        - "Audit Trail & Cryptographic Signature Verification"
+    validations:
+      required: true
+  - type: textarea
+    id: discrepancy_description
+    attributes:
+      label: Qualification Discrepancy Details
+      description: Explain the observed vs expected qualification outcome.
+      placeholder: Observed hash mismatch or metric threshold failure...
+    validations:
+      required: true
+  - type: textarea
+    id: certificate_payload
+    attributes:
+      label: Cryptographic Certificate Payload (JSON)
+      description: Paste the failed HMAC-SHA-256 certificate output.
+      render: json
+    validations:
+      required: false

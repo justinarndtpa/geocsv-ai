@@ -1,0 +1,45 @@
+name: Software Bug Report
+description: Report an implementation error, dependency mismatch, or runtime failure.
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue in `geocsv-ai`. Please provide specific, deterministic reproduction steps.
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the software did unexpectedly.
+      placeholder: Describe the defect...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Deterministic Reproduction Steps
+      description: Code snippet or CLI command sequence that reproduces the defect.
+      placeholder: |
+        1. Run `python ...`
+        2. Call function `...`
+        3. See error
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Terminal Output & Stack Trace
+      description: Paste the exact terminal output, including tracebacks.
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment & Hardware
+      description: OS version, CUDA driver, PyTorch version, GPU architecture.
+      placeholder: "Windows 11, CUDA 12.4, PyTorch 2.6.0, RTX 4060 Laptop GPU"
+    validations:
+      required: true

@@ -1,0 +1,37 @@
+name: Mathematical Inconsistency or Proof Discrepancy
+description: Report a numerical drift, violation of Stiefel manifold isometry, or Lean 4 formalization issue.
+title: "[MATH-DISCREPANCY]: "
+labels: ["mathematics", "formal-verification", "stiefel-manifold"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this issue template to report numerical drift, failure of isometry (||RᵀR - I||_F >= 1e-6), non-skew generators, or gaps in Lean 4 formal proof files.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Mathematical Component
+      options:
+        - "Sherman-Morrison-Woodbury Inverse Operator"
+        - "Exact Cayley Retraction on so(d)"
+        - "2D Kronecker-Cayley Spatial Operator (2D-CSO)"
+        - "Lean 4 Theorem Formulation (formal/GeoCSV/)"
+        - "Symplectic Integrator / Hamiltonian Energy Conservation"
+    validations:
+      required: true
+  - type: textarea
+    id: mathematical_analysis
+    attributes:
+      label: Inconsistency or Drift Analysis
+      description: Detail the theoretical derivation or measured numerical drift that violates the expected invariant.
+      placeholder: "Observed Frobenius deviation ||RᵀR - I||_F = 4.2e-5 at dimension d=4096, exceeding the 1.0e-6 threshold..."
+    validations:
+      required: true
+  - type: textarea
+    id: minimal_code
+    attributes:
+      label: Minimal Reproducible Script
+      description: Python or Lean 4 snippet isolating the numerical or formal inconsistency.
+      render: python
+    validations:
+      required: true
