@@ -32,4 +32,6 @@ jobs:
           echo "Auditing Lean 4 environment for GeoCSV mathematical theorems..."
           lean --version
           lake --version
+          echo "Compiling formal proofs..."
+          lake build
           echo "Lean 4 environment qualified for GeoCSV Stiefel verification."
