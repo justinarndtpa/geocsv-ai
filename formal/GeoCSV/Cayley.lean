@@ -14,7 +14,7 @@ variable {d : Type*} [DecidableEq d] [Fintype d]
 variable (η : ℝ)
 
 /-- The Cayley transform formula on so(d) -/
-def CayleyTransform (Ω : Matrix d d ℝ) (η : ℝ) : Matrix d d ℝ :=
+noncomputable def CayleyTransform (Ω : Matrix d d ℝ) (η : ℝ) : Matrix d d ℝ :=
   let A := 1 + (η / 2) • Ω
   let B := 1 - (η / 2) • Ω
   A⁻¹ * B

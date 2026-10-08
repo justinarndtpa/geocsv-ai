@@ -1,4 +1,4 @@
-import Mathlib.LinearAlgebra.Matrix.Basic
+import Mathlib.Data.Matrix.Basic
 import GeoCSV.Basic
 
 /-!
