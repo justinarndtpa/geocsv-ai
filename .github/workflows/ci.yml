@@ -64,4 +64,4 @@ jobs:
 
       - name: Execute Standalone Proof of Momentum
         run: |
-          python iq_stiefel.py
+          python examples/iq_stiefel.py

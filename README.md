@@ -178,7 +178,7 @@ Testing continuous Stiefel steering during autoregressive generation on `Llama-3
 Execute the standalone Installation Qualification (IQ) engine directly:
 
 ```bash
-python iq_stiefel.py
+python examples/iq_stiefel.py
 ```
 
 Expected Terminal Output:
@@ -384,13 +384,14 @@ geocsv-ai/
 │           └── kronecker.py                   # 2D Kronecker-Cayley Spatial Operator (2D-CSO)
 ├── tests/
 │   └── test_cayley_isometry.py                # Pytest suite asserting numerical isometry bounds
+├── examples/                                  # Reproducibility scripts
+│   ├── iq_stiefel.py                          # Standalone proof-of-momentum benchmark runner
+│   └── run_llama_hook.py                      # Llama-3.2-1B live transformer forward hook demo
 ├── CITATION.cff                               # Academic Citation File Format metadata
 ├── CONTRIBUTING.md                            # Contributor standards and PR protocol
-├── iq_stiefel.py                              # Standalone proof-of-momentum benchmark runner
 ├── LICENSE                                    # Apache License Version 2.0
 ├── pyproject.toml                             # Packaging, Ruff, MyPy, and Pytest configuration
 ├── README.md                                  # System technical documentation
-├── run_llama_hook.py                          # Llama-3.2-1B live transformer forward hook demo
 └── SECURITY.md                                # Vulnerability reporting and cryptographic integrity
 ```
 
