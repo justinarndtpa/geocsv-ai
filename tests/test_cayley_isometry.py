@@ -47,7 +47,9 @@ def test_kronecker_spatial_energy_conservation():
 def test_installation_qualification_tamper_evident():
     """Verify IQ engine produces deterministic signed certificate."""
     iq = InstallationQualification(model_id="google/gemma-2-2b")
-    cert = iq.execute()
+    # Provide a real torch module to the execute method to avoid the toy implementation
+    mock_model = torch.nn.Linear(10, 10)
+    cert = iq.execute(mock_model)
     assert cert.is_valid
     assert len(cert.weight_hash_sha256) == 64
     assert len(cert.signature) == 64
