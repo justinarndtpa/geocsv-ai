@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
+
 from geocsv.core.cayley import ExactCayleyRetraction
+
 
 class KroneckerSpatialOperator(nn.Module):
     """
@@ -13,7 +15,7 @@ class KroneckerSpatialOperator(nn.Module):
         self.grid_dim = grid_dim
         self.cayley_row = ExactCayleyRetraction(grid_dim, rank, eta=eta)
         self.cayley_col = ExactCayleyRetraction(grid_dim, rank, eta=eta)
-        
+
     def forward(self, grid: torch.Tensor, A_row: torch.Tensor, B_row: torch.Tensor,
                 A_col: torch.Tensor, B_col: torch.Tensor) -> torch.Tensor:
         """

@@ -35,7 +35,7 @@ jobs:
 
       - name: Run MyPy Static Type Analysis
         run: |
-          mypy src/geocsv --ignore-missing-imports
+          mypy src/geocsv --ignore-missing-imports --no-site-packages
 
   unit-and-property-tests:
     name: Numerical Invariants & Unit Tests

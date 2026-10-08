@@ -19,8 +19,8 @@ def IsSkewSymmetric (Ω : Matrix d d ℝ) : Prop :=
 def IsSpecialOrthogonal (R : Matrix d d ℝ) : Prop :=
   Rᵀ * R = 1 ∧ det R = 1
 
-/-- Stiefel Manifold V_k(R^d) condition for tall matrices W ∈ R^(d x k) -/
 variable {k : Type*} [DecidableEq k] [Fintype k]
 
+/-- Stiefel Manifold V_k(R^d) condition for tall matrices W ∈ R^(d x k) -/
 def IsOnStiefelManifold (W : Matrix d k ℝ) : Prop :=
   Wᵀ * W = 1
